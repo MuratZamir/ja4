@@ -6,7 +6,6 @@
   2. This is the upstream https://github.com/FoxIO-LLC/ja4 from the ja4-github-repo/python/ directory.
   3. ja4.py internally runs tshark (tshark -r <pcap> -T ek -n) to convert the pcap into per-packet JSON, then processes each packet.
 
-  Why only 6 streams instead of "lots of packets"
 
   There are several layers of filtering that dramatically reduce the count:
 
@@ -30,7 +29,4 @@
        ↓  group by stream (5-tuple)
        ↓  require TLS ClientHello for JA4 fingerprint
        ↓  discard streams without fingerprints
-  Result: 6 streams with JA4+ fingerprints
-
-  Your 6 streams are the 6 unique TLS connections in your capture that had a complete ClientHello. That's the expected behavior — the tool is purpose-built for JA4+ fingerprinting, not
-  general packet inspection like Wireshark.
+  Result: streams with JA4+ fingerprints
