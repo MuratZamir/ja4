@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+
+# build
+tsconfig.tsbuildinfo
+next-env.d.ts
+
+# env files
+.env
+.env.*
+
+# claude
+.claude/
+
+# large data files
+database.json
+
+# OS files
+.DS_Store
